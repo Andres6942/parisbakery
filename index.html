@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paris Bakery</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagenes/paris-logo.png" alt="Paris Bakery" title="Paris Bakery" />
+        </div>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">☰</button>
+    <nav id="nav-menu">
+    <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+    <li class="dropdown">
+    <a href="#productos">Productos</a>
+    <ul class="submenu">
+    <li><a href="#">Galletas</a></li>
+    <li><a href="#">Crookies</a></li>
+    <li><a href="#">Combos</a></li>
+    </ul>
+</li>
+
+        <li><a href="#promos">Promociones</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    </nav>
+</header>
+
+    <main>
+        <section id="inicio" class="intro">
+            <h2>Del horno al éxito</h2>
+            <p id="mensaje-hora" class="subtitulo"></p>
+            <p class="subtitulo">Horneamos pastelitos y galletas con pasión</p>
+            <a href="#productos" class="boton">Ver productos</a>
+    </section>
+
+        <section id="nosotros" class="sobre-nosotros">
+            <h2>Sobre Nosotros</h2>
+            <p>
+                Somos una joven pareja, orgullosamente guacariceños, y estudiantes universitarios que hace un año y medio decidimos transformar un sueño en realidad:
+                “Crear un negocio que no solo ofreciera productos irresistibles, sino que también tuviera un impacto económico y social positivo”
+                Con esta visión, nació nuestro proyecto, pensado para inspirar a las juventudes y brindar oportunidades a todos aquellos que deseen emprender. 
+                A lo largo de este tiempo, hemos crecido significativamente, llevando nuestros productos a múltiples rincones del Valle del Cauca, como Cali, Palmira, Buga, Tuluá, El Cerrito, Ginebra, Restrepo y Pradera.
+                Pero nuestro sueño no termina aquí. Con esfuerzo y determinación, estamos trabajando para compartir  nuestra pasión por el sabor y el emprendimiento en toda Colombia.
+                Creemos que TODOS merecen una oportunidad para crear algo grande, y nuestra misión es acompañarte en ese camino.            </p>
+        </section>
+
+        <section id="productos">
+            <h2>Nuestros Productos</h2>
+            <section class="slider">
+    <div class="slides">
+    <img src="imagenes/slider1.jpg" alt="Galleta de limón" class="slide">
+    <img src="imagenes/slider2.jpg" alt="Galleta de mora" class="slide">
+    <img src="imagenes/slider3.jpg" alt="Crookie" class="slide">
+    </div>
+</section>
+        <a href="#productos" class="boton">Ver productos</a>
+            <div class="galeria">
+                <div class="producto">
+                    <img src="imagenes/arequipe.png" alt="Galleta de Arequipe">
+                    <p>Galleta de Arequipe</p>
+                </div>
+                <div class="producto">
+                    <img src="imagenes/red-velvet.png" alt="Galleta de Red Velvet">
+                    <p>Galleta de Red Velvet</p>
+                </div>
+                <div class="producto">
+                    <img src="imagenes/maracuya.png" alt="Galleta de Maracuyá">
+                    <p>Galleta de Maracuyá</p>
+                </div>
+                <div class="producto">
+                    <img src="imagenes/oreo-nutella.png" alt="Galleta de Oreo con Nutella">
+                    <p>Galleta de Oreo con Nutella</p>
+                </div>
+                <div class="producto">
+                    <img src="imagenes/CROOKIE-RV.png" alt="Crookie">
+                    <p>Crookie</p>
+            </div>
+        </div>
+    </section>
+        
+    <section id="promos">
+        <h2>Promociones</h2>
+            <p>Descubre nuestras cajas de regalo y ediciones especiales para fechas inolvidables.</p>
+            <div class="contenedor-promos">
+                <div class="promos">
+                    <img src="imagenes/promoción caja.png" alt="caja de amor y amistad" />
+                    <p>Caja de Amor y Amistad</p>
+                    <p>2 Galletas rellenas, 1 Crookie, 1 Mini, Mimatarjeta personalizada (opcional)</p>
+                </div>
+                <div class="promos">
+                    <img src="imagenes/promo san valentin.png" alt="caja de san valentin" />
+                    <p>Caja de San Valentín</p>
+                    <p>4 galletas tipo New York</p>
+                </div>
+                <div class="promos">
+                    <img src="imagenes/caja día de la mujer.png" alt="caja del dia de la mujer" />
+                    <p>Caja del Día de la Mujer</p>
+                    <p>2 Galletas rellenas, 1 Crookie y mensaje personalizado</p>
+                </div>
+            </div>
+        </section>
+        
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Instagram: <a href="https://www.instagram.com/parisbakery_of" target="_blank">@parisbakery_of</a></p>
+            <p>WhatsApp: <a href="https://wa.me/573000000000" target="_blank">+57 300 000 0000</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Paris Bakery. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const links = document.querySelectorAll('nav ul li a');
+            const secciones = document.querySelectorAll('main > section');
+
+            secciones.forEach((sec, i) => {
+            sec.style.display = i === 0 ? 'block' : 'none';
+            });
+            links.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+              const id = this.getAttribute('href').substring(1); // Quita el "#"
+                secciones.forEach(sec => sec.style.display = 'none');e
+                const target = document.getElementById(id);
+                if (target) target.style.display = 'block';
+            });
+        });
+    });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>
